@@ -1,0 +1,15 @@
+.slider{
+    background-color: black;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.buttons{
+    padding: 20px;
+}
+.count{
+    font-size: 20px;
+    font-weight: 900;
+}
