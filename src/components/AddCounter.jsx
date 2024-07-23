@@ -1,17 +1,21 @@
 import {useState} from "react";
 import Counter from "../components/Counter";
-import AddCounterToggle from "../components/AddCounterToggle";
+import AddCounterList from "./AddCounterList.jsx";
+import Input from "./Input.jsx";
 
 export const AddCounter = () => {
-    const [counter, setCounter] = useState([]);
+    const [inputValue, setInputValue] = useState("");
+    const [counterList, setCounterList] = useState([]);
     const addCounter = () => {
-        const newCounter = [...counter, counter]
-        setCounter(newCounter)
+        const newCounter = counterList.map((item) => item)
+        newCounter.push(0)
+        setCounterList(newCounter)
     }
     return (
         <>
+            <Input inputValue={inputValue} setInputValue={setInputValue}/>
             <button className={"add__counter_button"} onClick={() => addCounter()}>Добавить счетчик</button>
-            <AddCounterToggle counter={counter}/>
+            <AddCounterList counterList={counterList} inputValue={inputValue} setInputValue={setInputValue}/>
         </>
     )
 }
