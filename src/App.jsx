@@ -1,9 +1,13 @@
 import './App.css'
-import Slider from './components/Slider'
+import Counter from './components/Counter.jsx'
+import AddCounter from "./components/AddCounter.jsx";
 
 function App() {
-    return(
-    <Slider/>
+    return (
+        <div className="App">
+            <AddCounter/>
+        </div>
     )
 }
+
 export default App
