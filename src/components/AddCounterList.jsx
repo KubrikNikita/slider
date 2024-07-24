@@ -1,9 +1,11 @@
 import AddCounter from "../components/AddCounter";
 import Counter from "../components/Counter";
 
-export const AddCounterList = ({counterList, inputValue, setInputValue}) => {
+export const AddCounterList = ({counterList, maxValue}) => {
     return (
-        counterList.map(() => (<Counter inputValue={inputValue} setInputValue={setInputValue} />))
+        counterList.map((item) => {
+            return (<Counter inputValue={item} maxValue={maxValue}/>);
+        })
     )
 }
 export default AddCounterList;

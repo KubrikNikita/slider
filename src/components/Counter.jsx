@@ -2,9 +2,12 @@ import {useState} from "react";
 import './Counter.css'
 import Input from "./Input.jsx";
 
-export const Counter = ({inputValue}) => {
+export const Counter = ({inputValue, maxValue}) => {
     const [value, setValue] = useState(Number(inputValue));
-    const increase = (value) => {
+    const increase = () => {
+        if (value === maxValue) {
+            return;
+        }
         return setValue(value => value + 1);
     }
     const decrease = (value) => {
